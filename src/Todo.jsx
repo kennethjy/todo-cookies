@@ -47,9 +47,11 @@ function Todo() {
   }, [filterOption]);
   
   async function setarrayfromfirebase(){
+    console.log(user.uid)
     const q = await fetch(api_host + "/gettodoforuser/" + user.uid);
     const queryDocs = await q.json();
     setArr(queryDocs);
+    console.log(arr)
   }
   async function updatearrfromfirebase(){
     const newArr = [];
