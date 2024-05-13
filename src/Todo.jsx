@@ -27,7 +27,7 @@ function Todo() {
   const [arr, setArr] = useState([]);
   const [filterOption, setFilterOption] = useState(Cookies.get('filterOption') || 'all');
   const [user, loading, error] = useAuthState(auth);
-  const api_host = "http://175.158.46.205:10800"
+  const api_host = "https://175.158.46.205:10800"
   
   useEffect(() => {
     if (!user) {
