@@ -175,7 +175,7 @@ function Todo() {
 
   // JSX for the filter module
   const filterModule = (
-    <div class="filter">
+    <div className="filter head-animate">
       <FiFilter size={30}/>
       <select class="select-dropdown" value={filterOption} onChange={(e) => setFilterOption(e.target.value)}>
         <option value="all">Show All</option>
@@ -189,7 +189,7 @@ function Todo() {
   const filteredArr = filterArray();
   const renderedOutput = filteredArr.map((item, index) => (
     <div className='todo-container'>
-      <div key={index} class="todo-item">
+      <div key={index} class="todo-item" style={{ animationDelay: `${(index+1) * 0.3}s` }}>
         <div class="left-todo">
         <div class="checkbox-outer" onClick={(e) => changeCheck(item.id, e)}>
           <div class={item.isChecked ? "checkbox-middle-checked" : "checkbox-middle-unchecked"}>
@@ -215,11 +215,11 @@ function Todo() {
     <>
       <div class="todo-container">
       <AccountDrawer />
-      <h1>{user? user.displayName != null ? user.displayName + "'s To-do List" : "To-do List" : "To-do List"}</h1>
-      <p>by: Kenneth Jayadi Yu 2602158260</p>
+      <h1 className='head-animate'>{user? user.displayName != null ? user.displayName + "'s To-do List" : "To-do List" : "To-do List"}</h1>
+      <p className='head-animate'>by: Kenneth Jayadi Yu 2602158260</p>
         {filterModule}
         {renderedOutput}
-        <div class="addButton" onClick={addtoDB}>
+        <div class="addButton" onClick={addtoDB} style={{ animationDelay: `${(arr.length + 1) * 0.3}s` }}>
           <CgAddR size={30}/>
         </div>
       </div>
